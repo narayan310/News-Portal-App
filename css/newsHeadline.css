@@ -1,0 +1,119 @@
+
+ 
+  .newsHeadline {
+
+        background-color: rgba(0,0,0,0.6);
+        display: table;
+        
+        width: 100%;
+        text-align: bottom;
+        top: 50%;
+        left: 50%;
+        bottom: 0px;
+        transform: translate(0%,-100%);
+        margin-bottom: -10vw;
+        margin-top: 0px;
+        
+        
+        
+        
+        
+    }
+
+    .newsHeadline:hover {
+        
+        
+        padding-bottom: 2vw;
+        transition: 0.5s ease-in-out;
+        
+            
+    }
+
+    .newsHeadline p {
+        
+            visibility: none;
+            opacity: 0;
+            color: lightgray;
+            bottom: 25%;
+            line-height: 20px;
+            text-align: center;
+            margin:0 10px;
+        }
+
+        .newsHeadline:hover p {
+
+                visibility: visible;
+                opacity: 1;
+                transition: ease-in 0.5s;
+                
+
+            
+            }
+
+    .newsHeadline h2 {
+        
+            color: white;
+            opacity: 1!important;
+            vertical-align: center;
+            font-size: 1.5vw;
+            margin-bottom: -2vw;
+        }
+
+        .newsHeadline:hover h2 {
+            
+                margin-bottom: 0px; 
+                transition: 0.5s;
+            
+            }
+
+    .newsHeadline h6 {
+        
+            color: darkgray;
+            opacity: 1!important;
+            text-align: center;
+            font-size: 0.8vw;
+            
+            
+        }
+
+    
+       
+    
+    
+    /*
+    
+    .newsHeadline:hover {
+    
+        top: 0px;
+        transition: 0.5s;
+    
+        
+    }
+    
+    .newsHeadline:hover h2 {
+    
+        margin-top: 100px; 
+        transition: 0.5s;
+    
+    }
+    
+    
+    
+    
+    
+    .newsHeadline p {
+    
+        opacity: 0;
+        color: white;
+        bottom: 25%;
+        line-height: 20px;
+        text-align: center;
+        margin:0 10px;
+    }
+    
+    .newsHeadline:hover p {
+    
+        opacity: 1;
+        transition: 0.5s;
+    
+    } */

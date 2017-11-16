@@ -1,0 +1,24 @@
+<div>
+
+    <div class="container col-md-12">
+        <div class="row">
+            <div class="newsbox col-md-4" ng-repeat="news in allNews.articles">
+            
+
+            <div class="transBox">
+            <img ng-src="{{allNews.articles[$index].urlToImage}}" style=" width: 100%;">
+            <a style="display:block;" href="{{allNews.articles[$index].url}}" target="_blank">
+            <div class="newsHeadline" href="{{allNews.articles[$index].url}}">
+                    
+                <h6><span>{{allNews.articles[$index].publishedAt | date: 'HH:MM dd.MMM '}}</span></h6>
+                <h2><span>{{allNews.articles[$index].title}}</span></h2>
+                <p> <span class="newsDescription">{{allNews.articles[$index].description}}</span></p>
+            </div>
+                
+            </div>
+        </a>
+            </div>
+        </div>
+    </div>
+        
+</div>
