@@ -11,6 +11,12 @@
                 
 
             };
+
+            var onSuccessRecent = function(response) {
+
+                $scope.recentNews = response.data;
+
+            };
     
             var onError = function(reason){
     
@@ -20,6 +26,9 @@
            
                 $http.get("https://newsapi.org/v1/articles?source=bbc-news&apiKey=4f7afbe1a0524139b7172fb4dee81467")
                     .then(onSuccess, onError);
+                
+                $http.get("https://newsapi.org/v2/everything?sources=bbc-news&apiKey=4f7afbe1a0524139b7172fb4dee81467")
+                    .then(onSuccessRecent, onError);
 
             
                    

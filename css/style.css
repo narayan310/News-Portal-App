@@ -1,3 +1,13 @@
+
+#Naslov {
+
+    padding-left: 30px;
+    padding-top: 1vw;
+    font-family: Gotham;
+    font-weight: 600;
+
+}
+
 .siteheader {
 
     text-align: center;
@@ -11,38 +21,161 @@
 
 }
 
+.topNewsContainer {
+    
+    margin-top: 1vw;
+   
+    max-height: 250px;
+    position: relative;
+    
+    
+}
+
+.topNewsContainer img {
+
+    width: 100%;
+}
+
+
+
+.topNewsText{
+
+    padding: 1vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: inherit;
+    overflow: hidden;
+    
+}
+
+
+.mostRecent {
+
+    background-color: lightgray;
+    border-color: rgb(95, 95, 95);
+    border-style: 2px solid;
+    border-radius: 10px;
+    
+    
+    
+}
+
+.mostRecent h5 {
+    
+    padding-left: 15px;
+    padding-right:10px;
+}
+.mostRecent p {
+
+    padding-left: 15px;
+    line-height: 6px;
+}
+
+#mostRecentContent {
+
+    line-height: 20px;
+    
+}
+
+#mostRecentContent a{
+
+    color: black;
+
+}
+
+#mostRecentContent a:hover{
+    
+        text-decoration: none;
+    
+    }
+
 
 .newsbox {
 
     /* background-color: yellow; */
-    margin-top: 40px;
-    display: table;
-    position: relative;
+    margin-top: 1vw;
+    display: inline-block;
+    overflow: hidden;
+    height: 300px;
+    position: absolute;
+
+    
 
     
 }
 
-
-
-.newsbox h2 {
-
-    text-align: center;
-    padding: 10px;
-    font-family: Merriweather;
-    font-weight: 400;
-    letter-spacing: -1px;
-    font-size: 26px;
-
-    
-}
 
 .newsbox img{
 
     width: 100%;
-    margin: auto;
-    display: table-cell;
-    opacity: 1!important;
+    
+    position: relative;
+    display:table;
+    
+    
    
+}
+.newsboxText {
+    
+        
+        color: white;
+        
+        background-color: rgba(0, 38, 82, 0.5);
+        margin-bottom: -8px;
+        
+        width: 100%;
+    }
+
+.newsboxText h4 {
+
+
+    position: relative;
+    
+    left: 1px;
+    right: 16px;
+    padding: 4px;
+    text-align: left;
+    width: 100%;
+ 
+    
+}
+
+.newsboxText h6 {
+    position: relative;
+    top: 5px;
+    left: 1px;
+    right: 16px;
+    padding: 4px;
+    text-align: left;
+    width: 100%;
+    
+}
+
+.newsboxText p {
+    padding: 4px;
+    line-height: 0px;
+    margin-bottom: -8px;
+    opacity: 0;
+}
+
+
+.newsbox:hover p {
+
+    opacity: 1;
+    line-height: 24px;
+    padding-bottom: 8px;
+    transition: 0.3s ease-out;
+    
+}
+
+.newsbox a:hover {
+
+    text-decoration: none;
 }
 
 
@@ -76,11 +209,57 @@
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
+.topnav a:active {
     background-color: #4CAF50;
     color: white;
 }
 
+.topNews {
+
+   padding: 10px;
+   display: inline-block;
+   height: 600px;
+   margin-top: 1vw;
+   overflow: hidden;
+   
+   
+}
+
+.topNews img{
+
+    width: 100%;
+    position: relative;
+    
+    
+}
+
+#topNewsTitle {
+
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 3vw;
+}
+
+#topNewsTitle h1{
+
+    font-family: Merriweather;
+}
+
+#topNewsTitle a {
+
+    color: white;
+}
+
+#topNewsTitle a:hover {
+
+    text-decoration: none;
+}
 
 
 

@@ -19,6 +19,26 @@
                 
                 templateUrl: "aljazeera.html",
                 controller: "AlJazeeraCtrl"
+            })
+            .when('/dailymail', {
+                
+                templateUrl: "dailymail.html",
+                controller: "DailyMailCtrl"
+            })
+            .when('/cnn', {
+                
+                templateUrl: "cnn.html",
+                controller: "CNNCtrl"
+            })
+            .when('/wsj', {
+                
+                templateUrl: "wsj.html",
+                controller: "WSJCtrl"
+            })
+            .when('/reuters', {
+                
+                templateUrl: "reuters.html",
+                controller: "ReutersCtrl"
             });
             
 

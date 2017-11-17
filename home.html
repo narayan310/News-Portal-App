@@ -1,119 +1,307 @@
-<div>
+<div id="homePage">
     <br>
-    <h3 id="topnews">Collecting all the top news from major news stations</h2>
-    <h2 class="newsName">BBC</h2>
-    <hr>
+    <h2 id="siteDescription">Collecting all the top news from major news stations</h2>
+    
 
     <!-- BBC -->
-    <div class=".container-fluid newsBckgrnd" >
-        <div class="container">
-            <div class="col-md-12" style="width: 150%;">
-                <div id="bbc" class="carousel slide" data-ride="carousel">
-            
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#bbc" data-slide-to="0" class="active"></li>
-                        <li data-target="#bbc" data-slide-to="1"></li>
-                        <li data-target="#bbc" data-slide-to="2"></li>
-                    </ul>
-                    
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img ng-src="{{allNews.articles[0].urlToImage}}" > 
-                            <div class="carousel-caption newsCaption">
-                                <h6>Published at: {{allNews.articles[0].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                <h1>{{allNews.articles[0].title}}</h1>
-                                <p>{{allNews.articles[0].description}}</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                                <img ng-src="{{allNews.articles[1].urlToImage}}" > 
-                                <div class="carousel-caption newsCaption">
-                                        <h6>Published at: {{allNews.articles[1].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                        <h1>{{allNews.articles[1].title}}</h1>
-                                        <p>{{allNews.articles[1].description}}</p>
-                                    </div>
-                        </div>
-                        <div class="carousel-item">
-                                <img ng-src="{{allNews.articles[2].urlToImage}}" >
-                                <div class="carousel-caption newsCaption">
-                                        <h6>Published at: {{allNews.articles[2].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                        <h1>{{allNews.articles[2].title}}</h1>
-                                        <p>{{allNews.articles[2].description}}</p>
-                                    </div> 
-                        </div>
-                    </div>
-                    
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#bbc" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#bbc" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Al Jazeera -->
-    <h2 class="newsName">Al Jazeera</h2>
+    <h2 class="newsName">BBC</h2>
     <hr>
-    <div class=".container-fluid newsBckgrnd"  ng-controller="AlJazeeraCtrl">
-            <div class="container">
-                <div class="col-md-12" style="width: 150%;">
-                    <div id="aljazeera" class="carousel slide" data-ride="carousel">
+    <div class="col-md-12" ng-controller="BBCNewsCtrl">
+        <div class="row no-gutters">
+            <!-- big news -->
+            <div class="col-12 col-sm-12 col-md-8">
                 
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            <li data-target="#aljazeera" data-slide-to="0" class="active"></li>
-                            <li data-target="#aljazeera" data-slide-to="1"></li>
-                            <li data-target="#aljazeera" data-slide-to="2"></li>
-                        </ul>
-                        
-                        <!-- The slideshow -->
-                        <div class="carousel-inner" >
-                            <div class="carousel-item active">
-                                <img ng-src="{{allNews.articles[0].urlToImage}}" style="width:95%;"> 
-                                <div class="carousel-caption newsCaption">
-                                    <h6>Published at: {{allNews.articles[0].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                    <h1>{{allNews.articles[0].title}}</h1>
-                                    <p>{{allNews.articles[0].description}}</p>
+                <a ng-href="{{allNews.articles[0].url}}">
+                <div class="col-md-12 col-sm-12 homePageNews">
+                    
+                    <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
+
+                </div>
+                <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+                <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+                <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                 </a>
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 ">
+                
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top BBC news</h3>
+                    <hr>
+                    <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                        <a ng-href="{{allNews.articles[$index + 1].url}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="imgAbt">
+                                    <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                    <img ng-src="{{allNews.articles[1].urlToImage}}"style="width:95%;" > 
-                                    <div class="carousel-caption newsCaption">
-                                            <h6>Published at: {{allNews.articles[1].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                            <h1>{{allNews.articles[1].title}}</h1>
-                                            <p>{{allNews.articles[1].description}}</p>
-                                        </div>
-                            </div>
-                            <div class="carousel-item">
-                                    <img ng-src="{{allNews.articles[2].urlToImage}}"style="width:95%;" >
-                                    <div class="carousel-caption newsCaption">
-                                            <h6>Published at: {{allNews.articles[2].publishedAt | date: 'HH:MM dd.MMM '}}</h6>
-                                            <h1>{{allNews.articles[2].title}}</h1>
-                                            <p>{{allNews.articles[2].description}}</p>
-                                        </div> 
+                            <div class="col-md-8 sideNewsText">
+                                <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                                <h5>{{allNews.articles[$index + 1].title}}</h5>
                             </div>
                         </div>
+                        </a>
                         
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#aljazeera" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#aljazeera" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
+                    
                     </div>
-                </div>
+            
             </div>
-        </div>
+        </div> 
 
-    <!-- Al Jazeera -->
-    <h2 class="newsName">The rest coming soon</h2>
+    </div>
+
+
+    <!-- AlJazeera -->
+    <h2 class="newsName">Al Jazeera</h2>
     <hr>
+    <div class="col-md-12" ng-controller="AlJazeeraCtrl">
+        <div class="row no-gutters">
+            <!-- big news -->
+            <div class="col-12 col-sm-12 col-md-8">
+                
+                <a ng-href="{{allNews.articles[0].url}}">
+                <div class="col-md-12 col-sm-12 homePageNews">
+                    
+                    <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
 
-</div>  
+                </div>
+                <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+                <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+                <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                 </a>
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 ">
+                
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top Al Jazeera news</h3>
+                    <hr>
+                    <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                        <a ng-href="{{allNews.articles[$index + 1].url}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="imgAbt">
+                                    <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 sideNewsText">
+                                <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                                <h5>{{allNews.articles[$index + 1].title}}</h5>
+                            </div>
+                        </div>
+                        </a>
+                        
+                    
+                    </div>
+            
+            </div>
+        </div> 
+
+    </div>
+
+    <!-- Daily Mail -->
+    <h2 class="newsName">Daily Mail</h2>
+    <hr>
+    <div class="col-md-12" ng-controller="DailyMailCtrl">
+        <div class="row no-gutters">
+            <!-- big news -->
+            <div class="col-12 col-sm-12 col-md-8">
+                
+                <a ng-href="{{allNews.articles[0].url}}">
+                <div class="col-md-12 col-sm-12 homePageNews">
+                    
+                    <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
+
+                </div>
+                <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+                <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+                <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                 </a>
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 ">
+                
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top Daily Mail news</h3>
+                    <hr>
+                    <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                        <a ng-href="{{allNews.articles[$index + 1].url}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="imgAbt">
+                                    <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 sideNewsText">
+                                <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                                <h5>{{allNews.articles[$index + 1].title}}</h5>
+                            </div>
+                        </div>
+                        </a>
+                        
+                    
+                    </div>
+            
+            </div>
+        </div> 
+
+    </div>
+
+    <!-- CNN -->
+    <h2 class="newsName">CNN</h2>
+    <hr>
+    <div class="col-md-12" ng-controller="CNNCtrl">
+        <div class="row no-gutters">
+            <!-- big news -->
+            <div class="col-12 col-sm-12 col-md-8">
+                
+                <a ng-href="{{allNews.articles[0].url}}">
+                <div class="col-md-12 col-sm-12 homePageNews">
+                    
+                    <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
+
+                </div>
+                <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+                <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+                <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                 </a>
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 ">
+                
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top CNN news</h3>
+                    <hr>
+                    <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                        <a ng-href="{{allNews.articles[$index + 1].url}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="imgAbt">
+                                    <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 sideNewsText">
+                                <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                                <h5>{{allNews.articles[$index + 1].title}}</h5>
+                            </div>
+                        </div>
+                        </a>
+                        
+                    
+                    </div>
+            
+            </div>
+        </div> 
+
+    </div>
+
+    <!-- The WSJ -->
+    <h2 class="newsName">The Wall Street Journal</h2>
+    <hr>
+    <div class="col-md-12" ng-controller="WSJCtrl">
+        <div class="row no-gutters">
+            <!-- big news -->
+            <div class="col-12 col-sm-12 col-md-8">
+                
+                <a ng-href="{{allNews.articles[0].url}}">
+                <div class="col-md-12 col-sm-12 homePageNews">
+                    
+                    <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
+
+                </div>
+                <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+                <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+                <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                 </a>
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 ">
+                
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top WSJ news</h3>
+                    <hr>
+                    <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                        <a ng-href="{{allNews.articles[$index + 1].url}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="imgAbt">
+                                    <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 sideNewsText">
+                                <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                                <h5>{{allNews.articles[$index + 1].title}}</h5>
+                            </div>
+                        </div>
+                        </a>
+                        
+                    
+                    </div>
+            
+            </div>
+        </div> 
+
+    </div>
+
+   <!-- Reuters -->
+   <h2 class="newsName">Reuters</h2>
+   <hr>
+   <div class="col-md-12" ng-controller="ReutersCtrl">
+       <div class="row no-gutters">
+           <!-- big news -->
+           <div class="col-12 col-sm-12 col-md-8">
+               
+               <a ng-href="{{allNews.articles[0].url}}">
+               <div class="col-md-12 col-sm-12 homePageNews">
+                   
+                   <img width="100%"  ng-src="{{allNews.articles[0].urlToImage}}" class="img-responsive">
+
+               </div>
+               <h6 style="padding-left: 15px;">{{allNews.articles[0].publishedAt | date: 'HH:mm'}}</h6>
+               <h2 style="font-family: Merriweather; padding-left: 15px;">{{allNews.articles[0].title}}</h2>
+               <p style="padding-left: 15px;">{{allNews.articles[0].description}}</p>
+                </a>
+
+           </div>
+
+           <!--most recent -->
+           <div class="col-6 col-md-4 col-sm-12 ">
+               
+                   <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Top Reuters news</h3>
+                   <hr>
+                   <div  ng-repeat="news in allNews.articles | limitTo: 4">
+                       <a ng-href="{{allNews.articles[$index + 1].url}}">
+                       <div class="row">
+                           <div class="col-md-4">
+                               <div class="imgAbt">
+                                   <img width="220" height="120" ng-src="{{allNews.articles[$index + 1].urlToImage}}" />
+                               </div>
+                           </div>
+                           <div class="col-md-8 sideNewsText">
+                               <p>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm'}}</p>
+                               <h5>{{allNews.articles[$index + 1].title}}</h5>
+                           </div>
+                       </div>
+                       </a>
+                       
+                   
+                   </div>
+           
+           </div>
+       </div> 
+
+   </div>
+
+        
+
+      
+
+  
+
+</div>

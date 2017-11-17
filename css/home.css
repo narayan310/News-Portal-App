@@ -1,63 +1,55 @@
-#topnews {
-    
-        font-family: Gotham;
-        text-align: center;
-        font-weight: 400;
-        margin-top: 1vw;
+#siteDescription {
 
-    
-    
-    }
+    font-style: italic;
+    font-family: Gotham;
+    text-align: center;
+    font-weight: 300;
+}
 
 .newsName {
 
-    font-weight: 600;
-    text-align: center;
     font-family: Gotham;
-    margin-top: 2vw;
+    font-weight: 600;
+    padding-left: 30px;
+    margin-top: 50px;
+}
+
+.homePageNews {
+
+    height: 600px;
+    overflow: hidden;
+}
 
 
+    .sideNewsText p{
+
+        padding-left: 10px;
     }
 
-.newsCaption {
+    .sideNewsText h5{
+        
+        padding-left: 10px;
+    }
 
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-   
+    .imgAbt img {
+
+        margin-top: 5px;
+    }
     
-    
-    
-}
-
-.newsCaption h1 {
-
-    font-family: Merriweather;
-    width: 100%;
-    
-    
-
-    
-}
-
-.newsCaption p {
-
-    color: lightgray;
-}
-
-.newsCaption h6 {
-
-    color: darkgray;
-}
-
-.newsBckgrnd {
-
-    
-    width: 100%; 
-    min-height: 575px;
-    overflow: hidden;
-    background-size: 100%;
-    vertical-align: center;
-    background-repeat: no-repeat;
+    #homePage a {
+        
+                color: black;
+    }
+        
+    #homePage a:hover {
+        
+                text-decoration: none;
+    }
 
 
-}
+    @media only screen and (max-width: 500px) {
+        .homePageNews {
+            height: 300px;
+            overflow: hidden;
+        }
+    }

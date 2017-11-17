@@ -3,7 +3,7 @@
     var app = angular.module("newsApp");
     
     
-        var AlJazeeraCtrl = function($scope, $http) {
+        var WSJCtrl = function($scope, $http) {
     
             var onSuccess = function(response) {
     
@@ -12,11 +12,10 @@
 
             };
 
-            var onSuccessRecent = function(response) {
+             var onSuccessRecent = function(response) {
 
-                $scope.recentNews = response.data;
-                
-            };
+                 $scope.recentNews = response.data;
+             };
     
             var onError = function(reason){
     
@@ -24,21 +23,21 @@
             };
     
            
-                $http.get("https://newsapi.org/v1/articles?source=al-jazeera-english&apiKey=4f7afbe1a0524139b7172fb4dee81467")
+                $http.get("https://newsapi.org/v1/articles?source=the-wall-street-journal&apiKey=4f7afbe1a0524139b7172fb4dee81467")
                     .then(onSuccess, onError);
-
-                $http.get("https://newsapi.org/v2/everything?sources=al-jazeera-english&apiKey=4f7afbe1a0524139b7172fb4dee81467")
+                
+                $http.get("https://newsapi.org/v2/everything?sources=the-wall-street-journal&apiKey=4f7afbe1a0524139b7172fb4dee81467")
                     .then(onSuccessRecent, onError);
 
             
-                    
+                   
         
               
             
 
             };
 
-        app.controller("AlJazeeraCtrl", AlJazeeraCtrl);
+        app.controller("WSJCtrl", WSJCtrl);
         
     
     }());

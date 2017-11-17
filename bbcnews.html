@@ -1,24 +1,70 @@
 <div>
 
-    <div class="container col-md-12">
+    <div class=".container-fluid ">
         <div class="row">
-            <div class="newsbox col-md-4" ng-repeat="news in allNews.articles">
             
+            <div class="col-md-12 topNews">
+                    <a ng-href="{{allNews.articles[0].url}}">
+                <img ng-src="{{allNews.articles[0].urlToImage}}">
+                </a>
 
-            <div class="transBox">
-            <img ng-src="{{allNews.articles[$index].urlToImage}}" style=" width: 100%;">
-            <a style="display:block;" href="{{allNews.articles[$index].url}}" target="_blank">
-            <div class="newsHeadline" href="{{allNews.articles[$index].url}}">
-                    
-                <h6><span>{{allNews.articles[$index].publishedAt | date: 'HH:MM dd.MMM '}}</span></h6>
-                <h2><span>{{allNews.articles[$index].title}}</span></h2>
-                <p> <span class="newsDescription">{{allNews.articles[$index].description}}</span></p>
-            </div>
                 
+
             </div>
-        </a>
+            <div id="topNewsTitle">
+                    <a ng-href="{{allNews.articles[0].url}}">
+                            
+                    <h6><span>Published at: {{allNews.articles[0].publishedAt | date: 'HH:MM dd.MMM '}}</span></h6>
+                <h1>{{allNews.articles[0].title}}</h1>
+                <p>{{allNews.articles[0].description}}</p>
+            </a>
             </div>
-        </div>
+        
     </div>
+    </div>
+
+    
+    <!--top news repeat-->
+    <h3 id="Naslov">TOP NEWS</h3>
+    
+
+        
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-12 col-md-8">
+                <hr>
+                
+                <div class="col-md-4 newsbox" ng-repeat="news in allNews.articles | limitTo: 9">
+                    <a ng-href="{{allNews.articles[$index + 1].url}}">
+                       <div class="newsboxText"> 
+                           <h6>{{allNews.articles[$index + 1].publishedAt | date: 'HH:mm dd.MMM'}}</h6>
+                        <h4>{{allNews.articles[$index + 1].title}}</h4>
+                        <p>{{allNews.articles[$index + 1].description}}</p>
+                    </div>
+                    <img ng-src="{{allNews.articles[$index + 1].urlToImage}}">
+                    </a>
+                    
+                </div>
+                
+                
+
+            </div>
+
+            <!--most recent -->
+            <div class="col-6 col-md-4 col-sm-12 mostRecent">
+                    <h3 style="padding: 15px; font-family: Gotham; font-weight:600; color: rgb(99, 99, 99);">Most recent news</h3>
+                    <hr>
+                    <div id="mostRecentContent" ng-repeat="recent in recentNews.articles | limitTo: 10">
+                        <a ng-href="{{recentNews.articles[$index].url}}">
+                        <p>{{recentNews.articles[$index].publishedAt | date: 'HH:mm'}}</p>
+                        <h5>{{recentNews.articles[$index].title}}</h5>
+                        </a>
+                        <hr style="width: 90%;">
+
+                    </div>
+            </div>
+        </div> 
+        
+
+       
         
 </div>
